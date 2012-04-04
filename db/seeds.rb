@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# example reading a line from a file
+Venue.delete_all
+open("db/seeds/venues.csv") do |groups|
+    groups.read.each_line do |group|
+        next if group.empty?
+        name,address,capacity,phone,hours,seating = group.chomp.split(",")
+        Venue.create!(:name=>name, :address=>address, :capacity=>capacity, :phone=>phone, :hours=>hours, :seating=>seating)
+    end
+end
+

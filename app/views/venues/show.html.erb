@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @venue.name %></h1>
+
+<p>
+  <b>Address:</b>
+  <%= @venue.address %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @venue.phone %>
+</p>
+
+<p>
+    <b>Capacity:</b>
+  <%= @venue.capacity %>
+</p>
+
+<p>
+    <b>Box Office Hours:</b>
+  <%= @venue.hours %>
+</p>
+
+<p>
+    <b>Seating:</b>
+  <%= @venue.seating %>
+</p>
+
+<%= link_to 'Back', venues_path %>
+
