@@ -1,6 +1,7 @@
 <h1>Listing concerts</h1>
 
-<table>
+<table class="bordered-table zebra-striped">
+  <thead>
   <tr>
     <th>Date</th>
     <th>Artist</th>
@@ -9,21 +10,23 @@
     <th></th>
     <th></th>
   </tr>
+  </thead>
 
-<% @concerts.each do |concert| %>
-  <tr>
-    <td><%= concert.date %></td>
-    <td><%= concert.artist %></td>
-    <td><%= concert.venue %></td>
-    <td><%= link_to 'Show', concert %></td>
-    <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
-    <td><%= link_to 'Destroy', concert, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+  <% @concerts.each do |concert| %>
+    <tr>
+      <td><%= concert.date %></td>
+      <td><%= concert.artist %></td>
+      <td><%= concert.venue %></td>
+      <td><%= link_to 'Show', concert %></td>
+      <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
+      <td><%= link_to 'Destroy', concert, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
 </table>
 
 <br />
 
 <%= link_to 'New Concert', new_concert_path %>
-<input type="button" value="Click me" class="btn primary">
 

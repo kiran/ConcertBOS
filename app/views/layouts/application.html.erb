@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ConcertBOS</title>
+  <title><%= content_for?(:title) ? yield(:title) : "ConcertBOS" %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,6 +11,7 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
+       <% # should be a partial %>
       <a class="brand" href="/">ConcertBOS</a>
       <ul class="nav">
         <li class="active"><a href="/">Home</a></li>
@@ -23,7 +24,22 @@
   </div>
 </div>
 
-<%= yield %>
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <%#= render :partial => 'common/header' %>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <%#= render :partial => 'common/flashes' %>
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+    <%#= render :partial => 'common/footer' %>
+    </footer>
+  </div>
+</div>
 
 </body>
 </html>
