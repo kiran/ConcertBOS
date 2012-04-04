@@ -22,7 +22,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'backbone-rails'
+gem 'rails-backbone'
 
 gem 'irt'
 
