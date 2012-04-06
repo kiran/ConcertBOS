@@ -1,0 +1,24 @@
+<% title 'Artists' %>
+
+<table class="table-bordered table-striped table">
+  <thead>
+  <tr>
+    <th>Name</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @artists.each do |artist| %>
+    <tr>
+      <td><%= artist.name %></td>
+      <td>
+        <%= link_to artist, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
+            <i class="icon-chevron-right icon-white"></i>
+        <% end %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br />
+
