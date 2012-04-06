@@ -16,9 +16,15 @@
         <h1><%= content_for?(:title) ? yield(:title) : 'ConcertBOS' %></h1>
     </div>
     <div class="row">
-      <div class="span12">
+      <div class="span2">
+        Sidebar 1
+      </div>
+      <div class="span8">
         <%= render :partial => 'common-partials/flashes' %>
         <%= yield %>
+      </div>
+      <div class="span2">
+        Sidebar 3
       </div>
     </div>
     <footer>
