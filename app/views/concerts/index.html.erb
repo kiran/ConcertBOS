@@ -1,4 +1,4 @@
-<% title 'All concerts' %>
+<% title 'Concerts' %>
 
 <table class="table-bordered table-striped table">
   <thead>
@@ -15,13 +15,13 @@
       <td><%= l concert.date, :format=>:day%></td>
       <td><%= concert.artist.name %></td>
       <td><%= link_to concert.venue.name, concert.venue %></td>
-      <td><%= link_to 'Show', concert %></td>
+      <td>
+        <%= link_to concert, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
+            <i class="icon-chevron-right icon-white"></i>
+        <% end %>
+      </td>
     </tr>
   <% end %>
   </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Concert', new_concert_path %>
 
