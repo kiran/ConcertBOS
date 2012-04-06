@@ -12,12 +12,10 @@
   <tbody>
   <% @concerts.each do |concert| %>
     <tr>
-      <td><%= concert.date %></td>
-      <td><%= concert.artist %></td>
-      <td><%= concert.venue %></td>
+      <td><%= l concert.date, :format=>:day%></td>
+      <td><%= concert.artist.name %></td>
+      <td><%= link_to concert.venue.name, concert.venue %></td>
       <td><%= link_to 'Show', concert %></td>
-      <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
-      <td><%= link_to 'Destroy', concert, confirm: 'Are you sure?', method: :delete %></td>
     </tr>
   <% end %>
   </tbody>

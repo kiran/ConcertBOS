@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120403025850) do
+ActiveRecord::Schema.define(:version => 20120406024715) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -23,8 +23,11 @@ ActiveRecord::Schema.define(:version => 20120403025850) do
     t.datetime "date"
     t.integer  "artist_id"
     t.integer  "venue_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.boolean  "over18"
+    t.boolean  "over21"
+    t.decimal  "price",      :precision => 8, :scale => 2
   end
 
   add_index "concerts", ["artist_id"], :name => "index_concerts_on_artist_id"

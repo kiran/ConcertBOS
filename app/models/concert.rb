@@ -5,8 +5,8 @@ class Concert < ActiveRecord::Base
   belongs_to :venue
   accepts_nested_attributes_for :venue
 
-  attr_accessible :date, :artist, :venue
+  attr_accessible :date, :artist, :venue, :over18, :over21, :price
 
-  validates_presence_of :date, :artist, :venue
+  validates_presence_of :date, :artist, :venue, :price
 end
 

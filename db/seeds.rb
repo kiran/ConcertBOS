@@ -16,3 +16,17 @@ open("db/seeds/venues.csv") do |groups|
     end
 end
 
+months = {'January'=>1, 'February'=>2, 'March'=>3, 'April'=>4, 'May'=>5, 'June'=>6, 'July'=>7, 'August'=>8, 'September'=>9, 'October'=>10, 'November'=>11, 'December'=>12}
+
+Concert.delete_all
+Artist.delete_all
+open("db/seeds/concerts.csv") do |concerts|
+    concerts.read.each_line do |concert|
+      next if concert.empty?
+      artist,venue,month,day,time,price,over18,over21 = concert.chomp.split(',')
+      artist = Artist.create!(:name=>artist)
+      venue = Venue.find_by_name(venue)
+      date = '2012-'+months[month].to_s+'-'+day.to_s+' '+time
+      Concert.create!(:artist=>artist, :venue=>venue, :price=>price, :over18=>over18, :over21=>over21, :date=>date)
+    end
+end
