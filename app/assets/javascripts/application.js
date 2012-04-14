@@ -19,3 +19,4 @@
 //= require backbone_datalink
 //= require backbone/concert_bos
 //= require_tree .
+//= require jquery-ui
