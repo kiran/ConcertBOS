@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/bitboxer/rockstar.git
+  revision: 276c55df8dde66eb0852da215beeb1cd9e1b57c2
+  specs:
+    rockstar (0.6.4)
+      activesupport (>= 1.4.2)
+      activesupport (>= 1.4.2)
+      hpricot (>= 0.4.86)
+      hpricot (>= 0.4.86)
+      i18n
+      rake
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +57,7 @@ GEM
     execjs (1.3.0)
       multi_json (~> 1.0)
     hike (1.2.1)
+    hpricot (0.8.6)
     i18n (0.6.0)
     irt (1.2.10)
       differ (>= 0.1.1)
@@ -137,6 +150,7 @@ DEPENDENCIES
   jquery-rails
   rails (= 3.2.3)
   rails-backbone
+  rockstar!
   sass-rails (~> 3.2.3)
   sqlite3
   twitter-bootstrap-rails

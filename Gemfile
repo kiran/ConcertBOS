@@ -23,6 +23,7 @@ end
 
 gem 'jquery-rails'
 gem 'rails-backbone'
+gem 'rockstar', :git=>'git://github.com/bitboxer/rockstar.git'
 
 gem 'irt'
 

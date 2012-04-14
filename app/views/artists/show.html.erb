@@ -1,10 +1,52 @@
-<% title @artist.name %>
+<% title @artist.name
+ artist = Rockstar::Artist.new(@artist.name, :include_info => true)
+  %>
 
 <dl>
 <dt>Name:</dt>
 <dd><%= @artist.name %></dd>
-
 </dl>
+
+
+<img src=<%= artist.image(which = :extralarge) %> >
+
+
+<table class="table-bordered table-striped table">
+  <thead>
+  <tr>
+    <th>TRACKS</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% artist.top_tracks.slice(0,5).each do |track| %>
+    <tr>
+      <td><%= track.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<td>
+
+
+<table class="table-bordered table-striped table">
+  <thead>
+  <tr>
+    <th>SIMILAR ARTISTS</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% artist.similar.slice(0,5).each do |sim| %>
+    <tr>
+      <td><%= sim.name %></td>
+    </tr>
+ <% end %>
+  </tbody>
+</table>
+<td>
+
+
 
 <%= link_to artists_path, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
     <i class="icon-step-backward icon-white"></i>
