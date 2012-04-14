@@ -17,11 +17,11 @@
 
 <dt>Price:</dt>
 <dd><%= number_to_currency(@concert.price) %>
-  
+
 <dt>Doors open:</dt>
 <dd><%= l @concert.date, :format=>:time %>
 
 </dl>
 
-<%= link_to 'Back', concerts_path %>
+<%= link_to 'All Concerts', concerts_path %>
 

@@ -13,7 +13,7 @@
   <% @concerts.each do |concert| %>
     <tr>
       <td><%= l concert.date, :format=>:day%></td>
-      <td><%= concert.artist.name %></td>
+      <td><%= link_to concert.artist.name, concert.artist %></td>
       <td><%= link_to concert.venue.name, concert.venue %></td>
       <td>
         <%= link_to concert, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
