@@ -8,5 +8,7 @@ class Concert < ActiveRecord::Base
   attr_accessible :date, :artist, :venue, :over18, :over21, :price
 
   validates_presence_of :date, :artist, :venue, :price
+
+  has_many :users, :through => :concertusers
 end
 
