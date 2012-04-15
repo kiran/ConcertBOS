@@ -4,6 +4,7 @@
 
 #price-filter {
 		width: 100%;
+		margin-bottom: 15px;
 }
 #price-filter .ui-slider-range { 
    background-image: linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);

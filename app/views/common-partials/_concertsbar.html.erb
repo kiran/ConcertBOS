@@ -1,11 +1,29 @@
 <h1>Interested in:</h1>
 
+<div id ='concerts-list'>
 <% @concertsusers = ConcertsUser.all %>
 
 <% @concertsusers.each do |c| %>
   <% concert = Concert.find(c.concert_id) %>
-  <%= link_to concert, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
+  <%= link_to concert, :class => "btn btn-inverse btn-mini", :id=>c.id, :style => 'color: #FFFFFF' do %>
       <%= concert.artist.name%>, <%= l concert.date, :format=>:day %>
   <% end %>
-  <br><br>
 <% end %>
+</div>
+
+<br><br>
+<h1>Visualize these by:</h1>
+<ul>
+  <li> <%= link_to "artist_vis" do %>
+                Artist Similarity
+           <% end %>
+  </li>
+  <li><%= link_to "friends_vis" do%>
+            Friends
+            <% end %>
+  </li>
+  <li><%= link_to "concerts" do%>
+            Date
+            <% end %>
+  </li>
+</ul>
