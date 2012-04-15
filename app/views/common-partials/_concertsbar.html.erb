@@ -1,1 +1,9 @@
-hurdy gurdy
+<% @concertsusers = ConcertsUser.all %>
+
+<% @concertsusers.each do |c| %>
+  <% concert = Concert.find(c.concert_id) %>
+  <%= link_to concert, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
+      <%= concert.artist.name%>, <%= l concert.date, :format=>:day %>
+  <% end %>
+  <br><br>
+<% end %>

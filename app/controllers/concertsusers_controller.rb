@@ -41,7 +41,7 @@ class ConcertsusersController < ApplicationController
 
     respond_to do |format|
       if @concertsuser.save
-        format.json { render json: @concertsuser, status: :created, location: @concertsuser }
+        format.json { render json: @concertsuser, status: :created}
       else
         format.json { render json: @concertsuser.errors, status: :unprocessable_entity }
       end
