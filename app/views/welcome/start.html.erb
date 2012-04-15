@@ -2,9 +2,18 @@
   <h1>You care about . . .</h1>
    <br>
   <ul>
-  <li><a href='/artist'>the <em>artist</em> that's playing.</a></li>
-  <li><a href='/friend'>what your <em>friends</em> like.</a></li>
-  <li><a href='/calendar'><em>when</em> the concert is.</a></li>
+  <li> <%= link_to "artist_vis" do %>
+                the <em>artist</em> that's playing
+           <% end %>
+  </li>
+  <li><%= link_to "friends_vis" do%>
+            what your <em>friends</em> like.
+            <% end %>
+  </li>
+  <li><%= link_to "calendar_vis" do%>
+            <em>when</em> the concert is.
+            <% end %>
+  </li>
   </ul>
 </div>
 

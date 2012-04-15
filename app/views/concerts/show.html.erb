@@ -7,7 +7,9 @@
 <dd><%= l @concert.date, :format=>:day%></dd>
 
 <dt>Artist:</dt>
-<dd><%= @concert.artist.name %></dd>
+<dd>
+<%= @concert.artist.name %>
+</dd>
 
 <dt>Venue:</dt>
 <dd><%= link_to @concert.venue.name, @concert.venue %></dd>

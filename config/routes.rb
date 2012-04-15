@@ -15,6 +15,11 @@ ConcertBOS::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
   match 'start' => 'welcome#start'
+  match 'artist_vis' => 'artist_vis#index'
+  match 'friends_vis' => 'friends_vis#index'
+  match 'get-similar' => 'artists#getSimilar'
+
+
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
