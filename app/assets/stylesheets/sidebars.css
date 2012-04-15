@@ -1,0 +1,23 @@
+.span2 h1 {
+  font-size: 110%;
+}
+
+#price-filter {
+		width: 100%;
+}
+#price-filter .ui-slider-range { 
+   background-image: linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
+   background-image: -o-linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
+   background-image: -moz-linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
+   background-image: -webkit-linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
+   background-image: -ms-linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
+
+   background-image: -webkit-gradient(
+   	linear,
+   	left bottom,
+   	right bottom,
+   	color-stop(0.11, rgb(255,116,35)),
+   	color-stop(0.52, rgb(255,211,79))
+   );
+}
+#price-filter .ui-slider-handle { border-color: #F17223; }
