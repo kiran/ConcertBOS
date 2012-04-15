@@ -1,0 +1,86 @@
+{"Nada Surf":{
+                        "when":"Friday, Apr 06",
+                        "venue":"Paradise Rock Club",
+                        "price":22.50,
+                        "age":18,
+                        "similar":{
+                                "The Horrors":{
+                                        "when":"Wednesday, Apr 11",
+                                        "venue":"Paradise Rock Club",
+                                        "price":15.00,
+                                        "age":18,
+                                        "similar":{}
+                                 }
+                                "Hot Chelle Rae":{
+                                        "when":"Friday, Apr 13",
+                                        "venue":"Paradise Rock Club",
+                                        "price":15.00,
+                                        "age":0,
+                                        "similar":{}
+                                 }
+                        }
+                      }
+    "Neon Trees":{
+                        "when":"Monday, May 07",
+                        "venue":"Paradise Rock Club",
+                        "price":20.00,
+                        "age":0,
+                        "similar":{
+                                "Florence":{
+                                        "similar":{}
+                                 }
+                                "Good Old War":{
+                                        "when":"Thursday, Apr 26",
+                                        "venue":"Paradise Rock Club",
+                                        "price":15.00,
+                                        "age":18,
+                                        "similar":{}
+                                 }
+                        }
+                      }
+    "Ellie Goulding":{
+                        "similar":{
+                                "Trampled by Turtles":{
+                                        "when":"Wednesday, April 18",
+                                        "venue":"Paradise Rock Club",
+                                        "price":20.00,
+                                        "age":18,
+                                        "similar":{}
+                                 }
+                                "Washed Out":{
+                                        "when":"Friday, Apr 20",
+                                        "venue":"Paradise Rock Club",
+                                        "price":15.00,
+                                        "age":18,
+                                        "similar":{}
+                                 }
+                        }
+                      }
+    "Lambchop":{
+                        "when":"Tuesday, Apr 17",
+                        "venue":"Paradise Rock Club",
+                        "price":16.50,
+                        "age":18,
+                        "similar":{
+                                "Kinna Grannis":{
+                                        "when":"Friday, Apr 27",
+                                        "venue":"Paradise Rock Club",
+                                        "price":15.00,
+                                        "age":0,
+                                        "similar":{}
+                                 }
+                                "Eric Hutchings":{
+                                        "when":"Tuesday, May 01",
+                                        "venue":"Paradise Rock Club",
+                                        "price":15.00,
+                                        "age":0,
+                                        "similar":{}
+                                 }
+                        }
+                      }
+}
+
+
+
+ <!-- concert he has, price, age restriction, date, artist,
+
