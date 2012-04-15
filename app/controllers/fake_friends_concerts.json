@@ -1,0 +1,48 @@
+{"name":"kiran",id0
+    "concerts":{"Nada Surf", "Aer", "RJD2"},
+
+"name":"pia",id1
+"concerts":{"The Conspirator", "Nada Surf", "Trampled by Turtles"},
+
+"name":"evan",id2
+"concerts":{"Lucero", "Lamb Chop", "Nada Surf"},
+
+"name":"bob dole",id3
+"concerts":{"The Drums", "Eric Hutchings", "White Rabbits"},
+
+"name":"Tina Fey",id4
+"concerts":{"Nada}
+}
+
+
+{"nodes":[{"name":"Kiran",      "id":0,     "group":0,      "value":18},
+                {"name":"Pia",          "id":1,     "group":0,      "value":4},
+                {"name":"Evan",         "id":2,     "group":0,        "value":7},
+                {"name":"Bob Dole", "id":3,     "group":0,      "value":9  },
+                {"name":"Tina Fey",     "id":4      "group":0       "value":6},
+
+                {"name":"Nada Surf",                    "id":0,             "group":1       "value":3},
+                {"name":"Aer",                              "id":1,             "group":1       "value":7},
+                {"name":"Lucero",                           "id":2,             "group":1       "value":10},
+                {"name":"Lamb Chop",                    "id":3,             "group":1       "value":3},
+                {"name":"White Rabbits",                "id":4,             "group":1       "value":8},
+                {"name":"The Drums",                    "id":5,             "group":1       "value":16},
+                {"name":"Trampled by Turtles",        "id":6,             "group":1       "value":12},
+                {"name":"Eric Hutchingson",             "id":7,             "group":1       "value":6}]
+}
+
+{"links":[ {0,0},
+                {0,6},
+                {0,5},
+                {1,3},
+                {1,0},
+                {1,2},
+                {2,0},
+                {2,7},
+                {3,3},
+                {4,1},
+                {4,2},
+                {4,6},
+                {4,3}]
+}
+
