@@ -2,7 +2,7 @@ class ConcertsController < ApplicationController
   # GET /concerts
   # GET /concerts.json
   def index
-    @concerts = Concert.all
+    @concerts = Concert.find(:all, :order=>"date ASC")
 
     respond_to do |format|
       format.html # index.html.erb

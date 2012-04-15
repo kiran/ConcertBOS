@@ -12,20 +12,21 @@ $(document).ready(function() {
   });
   
   function addPreference (item) {
-    list = $('#concerts-list');
-    item.clone().appendTo(list).fadeIn();
-    list.append('<br>');
-    
     // get the concert id
-    id = /\d+/.exec(item.attr('href'))[0];
-    console.log(id);
+    var id = /\d+/.exec(item.attr('href'))[0];
     // set the user id to 1
-    info = JSON.stringify({'concert_id':id,'user_id':1});
-    console.log(info);
+    var info = JSON.stringify({'concert_id':id,'user_id':1});
+    // add to the list on success
+    var success = function() {
+      item.draggable('disable');
+      var list = $('#concerts-list');
+      item.clone().appendTo(list).fadeIn();
+      list.append('<br>');
+    }
     // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create
-    options = {url : '/concertsusers', type: 'POST', // URL and method to call 
+    var options = {url : '/concertsusers', type: 'POST', // URL and method to call 
       contentType : 'application/json', dataType: 'json', // send and receive data from the server as JSON}
-      data: info};
+      data: info, success:success};
     
     $.ajax(options);
   }

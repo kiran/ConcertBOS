@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link rel="shortcut icon" href="/assets/favicon.ico"/>
+  <link href = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/themes/ui-lightness/jquery-ui.css", rel = "stylesheet", type = "text/css" />
 </head>
 <body>
 
@@ -18,7 +19,7 @@
     </div>
     <div class="row">
       <div class="span2" id='concertsbar'>
-        <div class='well'>
+        <div class='well' id='concerts-list'>
           <%= render :partial => 'common-partials/concertsbar'%>
         </div>
       </div>
