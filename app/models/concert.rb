@@ -9,6 +9,6 @@ class Concert < ActiveRecord::Base
 
   validates_presence_of :date, :artist, :venue, :price
 
-  has_many :users, :through => :concertusers
+  has_many :users, :through => :concertsusers
 end
 
