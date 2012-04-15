@@ -37,8 +37,8 @@ class ArtistsController < ApplicationController
         return levels
     end
 
-    def getSimilar()
-        seed = ["Nada Surf","White Rabbits", "Childish Gambino", "deadmau5", "Porcupine Tree"]
+    def getSimilar(seed = ["Nada Surf","White Rabbits", "Childish Gambino", "deadmau5", "Porcupine Tree"])
+
         levels = {} #change for actuall implementation to get who you listen to
         seed.each do |artistName|
             levels[artistName]={}
