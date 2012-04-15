@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
 
     def start
       User.destroy_all
+      ConcertsUser.destroy_all
       user = User.new("username" => 'default')
       user.save
     end
