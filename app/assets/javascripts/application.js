@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require underscore
+//= require ./lib/d3.v2.js
+//= require_tree ./lib
 //= require_tree .
 //= require jquery-ui
+

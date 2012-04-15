@@ -1,0 +1,67 @@
+{
+ "name": "Nada Surf",
+ "children": [
+  {
+   "name": "The Horrors",
+   "children": [
+    {
+     "name": "Hot Chelle Rae"
+    },
+    {
+     "name": "Neon Trees",
+     "children": [
+      {"name": "Florence", "size": 3534},
+      {"name": "Good Old War", "size": 5731}
+     ]
+    },
+    {
+     "name": "Ellie Goulding",
+     "children": [
+      {"name": "Trampled by Turtles", "size": 7074},
+	  {"name": "Washed Out", "size": 707}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Lambchop",
+   "children": [
+    {"name": "Kinna Grannis", "size": 17010},
+    {"name": "Eric Hutchings", "size": 5842}
+   ]
+  },
+  {
+   "name": "util",
+   "children": [
+    {"name": "Arrays", "size": 8258},
+    {"name": "Geometry", "size": 10993},
+    {
+     "name": "heap",
+     "children": [
+      {"name": "FibonacciHeap", "size": 9354}
+     ]
+    },
+    {"name": "IEvaluable", "size": 335},
+    {"name": "IValueProxy", "size": 874},
+    {
+     "name": "math",
+     "children": [
+      {"name": "DenseMatrix", "size": 3165},
+      {"name": "SparseMatrix", "size": 3366}
+     ]
+    },
+    {"name": "Maths", "size": 17705},
+    {"name": "Orientation", "size": 1486},
+    {
+     "name": "palette",
+     "children": [
+      {"name": "ColorPalette", "size": 6367},
+      {"name": "SizePalette", "size": 2291}
+     ]
+    },
+    {"name": "Property", "size": 5559},
+    {"name": "Strings", "size": 22026}
+   ]
+  }
+ ]
+}
