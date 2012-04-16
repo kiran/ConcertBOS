@@ -3,15 +3,19 @@
 <table id='concerts' class="table-bordered table-striped table">
   <thead>
   <tr>
+    <th>Drag me</th>
     <th>Date</th>
     <th>Artist</th>
     <th>Venue</th>
+    <th>Go</th>
+
   </tr>
   </thead>
 
   <tbody>
   <% @concerts.each do |concert| %>
     <tr>
+      <td><div class="btn btn-inverse btn-mini drag" id= <%= concert.id %> ><i class="icon-chevron-left icon-white"></i></div></td>
       <td><%= l concert.date, :format=>:day%></td>
       <td><%= link_to concert.artist.name, concert.artist %></td>
       <td><%= link_to concert.venue.name, concert.venue %></td>
