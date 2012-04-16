@@ -1,7 +1,11 @@
-var r = 700 / 2;
+var r = 500 / 2;
 
-var minP = 100;
-var maxP = 2000;
+var midP = 15; //price range cutoff 1 (lower)
+var maxP = 50; //range between mid price and max price
+var mouseIsDown = false; 
+var selected = []; //array of selected concert id's
+var eighteen = true; //over 18
+var twentyOne = true; //over 21
 
 var tree = d3.layout.tree()
     .size([360, r - 120])
@@ -33,8 +37,63 @@ d3.json("assets/dummydata.json", function(json) {
       .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
 
   node.append("circle")
-      .attr("r", 4.5)
-	  .style("fill", function(d) { if(d.size < maxP || d.size > minP) { return "steelblue"} else {return "lightgreen"}});
+      .attr("r", 7.5)
+	  .style("stroke", function(d) { if(d.top >0) {return "darkorange"}})
+	  .style("fill", function(d) 
+		{ 
+		  var val = "lightgray";
+		  
+		if(d.price <= midP ) 
+			{ val = "deepskyblue";} 
+			else if (d.price <= maxP) 
+			{ val = "royalblue";} 
+			else 
+			{ val = "lightgray";}
+		  
+		 if(!eighteen)
+		  {
+			if (d.age!=0)
+			{
+				val = "lightgray";
+			}
+		  }
+		  else if(!twentyOne)
+		  {
+			if (d.age===21)
+			{
+				val = "lightgray"
+			}
+		  }
+		
+		return val;
+		
+		})
+	  
+	  .on("mouseover", function (d) 
+	{
+		d3.select(this).style("stroke","darkblue");
+	})
+	  .on("mouseout", function (d)
+	{
+		d3.select(this).style("stroke",
+		function (d) 
+		{
+			if(selected.indexOf(d.concert_id)<0)
+			{
+				return "white"
+			}
+			else
+			{
+				return "red"
+			}
+		});
+	})
+	  .on("mousedown", function (d) 
+	{
+		d3.select(this).style("stroke", "red");
+		selected.push( d.concert_id )
+		console.log(d.concert_id)
+	});
 
   node.append("text")
       .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
@@ -43,4 +102,3 @@ d3.json("assets/dummydata.json", function(json) {
       .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
       .text(function(d) { return d.name; });
 });
-
