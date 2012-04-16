@@ -21,6 +21,7 @@ $(document).ready(function() {
     //item.draggable('disable');
     // get the concert id
     var id =item.attr('id');
+
     // set the user id to 1
     var info = JSON.stringify({'concert_id':id,'user_id':1});
     // add to the list on success
@@ -30,7 +31,6 @@ $(document).ready(function() {
       marker.attr('id', e.id);
       marker.text(item.parent().siblings().text());
       marker.appendTo(list).fadeIn();
-      list.append('<br>');
     }
     // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create
     var options = {url : '/concertsusers', type: 'POST', // URL and method to call
@@ -48,6 +48,7 @@ $(document).ready(function() {
     // add to the list on success
     var success = function() {
       var marker = item.fadeOut();
+      item.remove();
     }
     // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create
     var options = {url : '/concertsusers/'+id, type: 'DELETE', // URL and method to call
