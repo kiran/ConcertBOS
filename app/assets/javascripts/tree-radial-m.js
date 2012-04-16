@@ -3,7 +3,7 @@ window.paint = function() {
   var r = 500 / 2;
 
   maxP = $( "#price-filter" ).slider( "value" ); //range between mid price and max price
-  midP = maxP/3; //price range cutoff 1 (lower)
+  midP = maxP/2; //price range cutoff 1 (lower)
   var mouseIsDown = false; 
   var selected = []; //array of selected concert id's
   eighteen = true; //over 18
@@ -46,9 +46,9 @@ window.paint = function() {
   		  var val = "lightgray";
 		  
   		if(d.price <= midP ) 
-  			{ val = "deepskyblue";} 
+  			{ val = "rgb(255,116,35)";} 
   			else if (d.price <= maxP) 
-  			{ val = "royalblue";} 
+  			{ val = "rgb(255,211,79)";} 
   			else 
   			{ val = "lightgray";}
 		  
@@ -76,7 +76,7 @@ window.paint = function() {
   		d3.select(this).style("stroke","darkblue");
   	})
   	  .on("mouseout", function (d)
-  	{
+  	{  
   		d3.select(this).style("stroke",
   		function (d) 
   		{
@@ -102,10 +102,18 @@ window.paint = function() {
       var info = JSON.stringify({'concert_id':id,'user_id':1});
       // add to the list on success
       var success = function(e) {
+        // add a div with a remove button and a more link
         var list = $('#concerts-list');
-        var marker = "<div class='btn'></div>";
-        $(marker).attr('id', e.id)
-          .text(d.name+" "+d.when)
+        var marker = "<a href=concerts/"+d.concert_id+" class='btn btn-inverse btn-mini'></div>";
+        marker = $(marker).text(d.name+" "+d.when);
+        var div = "<div class='concerts'></div>";
+        
+        var x = "<br><i class='icon-remove'></i>"
+        x = $(x).attr('id', e.id);
+        console.log(e.id);
+        
+        $(div).append(marker)
+          .append(x)
           .appendTo(list).fadeIn();
       }
       // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create

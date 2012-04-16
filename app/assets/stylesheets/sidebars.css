@@ -22,3 +22,12 @@
    );
 }
 #price-filter .ui-slider-handle { border-color: #F17223; }
+
+.icon-remove {
+  float: left;
+  cursor: pointer;
+}
+#concerts-list .btn {
+  width: 75%;
+  float: left;
+}

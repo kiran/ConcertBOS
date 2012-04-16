@@ -13,3 +13,7 @@
   stroke: #ccc;
   stroke-width: 1.5px;
 }
+
+.node:hover {
+  cursor: pointer;
+}

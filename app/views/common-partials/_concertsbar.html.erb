@@ -5,9 +5,12 @@
 
 <% @concertsusers.each do |c| %>
   <% concert = Concert.find(c.concert_id) %>
-  <%= link_to concert, :class => "btn btn-inverse btn-mini", :id=>c.id, :style => 'color: #FFFFFF' do %>
+  <div class='concerts'>
+  <%= link_to concert, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
       <%= concert.artist.name%>, <%= l concert.date, :format=>:day %>
   <% end %>
+  <i class='icon-remove' id= <%= c.id %> ></i>
+  </div>
 <% end %>
 </div>
 

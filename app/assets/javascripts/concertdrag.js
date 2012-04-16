@@ -11,7 +11,7 @@ $(document).ready(function() {
   	}
   });
 
-  $('#concerts-list .btn').on('click', function(e){
+  $('#concerts-list .icon-remove').live('click', function(e){
     e.preventDefault();
     window.e = e;
     deletePreference($(e.target));
@@ -30,7 +30,8 @@ $(document).ready(function() {
       var marker = item.clone();
       marker.attr('id', e.id);
       marker.text(item.parent().siblings().text());
-      marker.appendTo(list).fadeIn();
+      marker.appendTo(list);
+      list.append("<i class='icon-remove'></i>");
     }
     // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create
     var options = {url : '/concertsusers', type: 'POST', // URL and method to call
@@ -47,8 +48,8 @@ $(document).ready(function() {
     var info = JSON.stringify({'concert_id':id,'user_id':1});
     // add to the list on success
     var success = function() {
-      var marker = item.fadeOut();
-      item.remove();
+      var marker = item.parent().fadeOut();
+      item.parent().remove();
     }
     // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create
     var options = {url : '/concertsusers/'+id, type: 'DELETE', // URL and method to call
