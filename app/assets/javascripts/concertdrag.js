@@ -11,7 +11,7 @@ $(document).ready(function() {
   	}
   });
 
-  $('#concerts-list').on('click', function(e){
+  $('#concerts-list .btn').on('click', function(e){
     e.preventDefault();
     window.e = e;
     deletePreference($(e.target));
