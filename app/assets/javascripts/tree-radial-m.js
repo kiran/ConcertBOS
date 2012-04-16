@@ -73,7 +73,7 @@ window.paint = function() {
 	  
   	  .on("mouseover", function (d) 
   	{
-  		d3.select(this).style("stroke","darkblue");
+  		d3.select(this).style("stroke","maroon");
   	})
   	  .on("mouseout", function (d)
   	{  
