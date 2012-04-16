@@ -7,9 +7,15 @@ $(function() {
 			step: 10,
 			slide: function( event, ui ) {
 				$( "#amount" ).html( "$" + ui.value );
-				maxP = ui.value;
 				window.paint();
 			}
 		});
 		$( "#amount" ).html( "$" + $( "#price-filter" ).slider( "value" ) );
+		
+		$("input[name='age']").change(radioValueChanged);
+		
+		function radioValueChanged(event)
+    {
+			window.paint();
+    }
 });

@@ -6,8 +6,8 @@ window.paint = function() {
   midP = maxP/2; //price range cutoff 1 (lower)
   var mouseIsDown = false; 
   var selected = []; //array of selected concert id's
-  eighteen = true; //over 18
-  twentyOne = true; //over 21
+  eighteen = ($('#eighteen').attr('checked') != 'checked'); //over 18
+  twentyOne = ($('#twentyone').attr('checked') != 'checked'); //over 21
 
   var tree = d3.layout.tree()
       .size([360, r - 120])
@@ -39,7 +39,7 @@ window.paint = function() {
         .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
 
     node.append("circle")
-        .attr("r", 7.5)
+        .attr("r", 10)
   	  .style("stroke", function(d) { if(d.top >0) {return "darkorange"}})
   	  .style("fill", function(d) 
   		{ 
