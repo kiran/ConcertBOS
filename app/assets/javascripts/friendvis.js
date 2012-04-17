@@ -23,8 +23,8 @@ $(document).ready(function() {
         .data(json.nodes)
       .enter().append("div")
         .attr("class", "node")
-        .style("background", function(d) { if(d.group >0) { return "lightblue"} else {return "lightgreen"}; })
-        .style("border-color", function(d) {  if(d.group >0) { return "lightblue"} else {return "lightgreen"};})
+        .style("background", function(d) { if(d.group >0) { return "rgb(255,116,35)"} else {return "rgb(255,211,79)"}; })
+        .style("border-color", function(d) {  if(d.group >0) { return "rgb(255,116,35)"} else {return "rgb(255,211,79)"};})
   	  .attr("r", function(d) { return d.value+20; })
         .call(force.drag);
 
@@ -68,3 +68,4 @@ $(document).ready(function() {
     }
   });
 });
+
