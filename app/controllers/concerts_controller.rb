@@ -6,7 +6,7 @@ class ConcertsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @concerts }
+      format.json { render :json => @concerts }
     end
   end
 
@@ -17,7 +17,7 @@ class ConcertsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @concert }
+      format.json { render :json => @concert }
     end
   end
 
@@ -28,7 +28,7 @@ class ConcertsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @concert }
+      format.json { render :json => @concert }
     end
   end
 
@@ -44,11 +44,11 @@ class ConcertsController < ApplicationController
 
     respond_to do |format|
       if @concert.save
-        format.html { redirect_to @concert, notice: 'Concert was successfully created.' }
-        format.json { render json: @concert, status: :created, location: @concert }
+        format.html { redirect_to @concert, :notice => 'Concert was successfully created.' }
+        format.json { render :json => @concert, :status =>:created, :location => @concert }
       else
-        format.html { render action: "new" }
-        format.json { render json: @concert.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @concert.errors, :status =>:unprocessable_entity }
       end
     end
   end
@@ -60,11 +60,11 @@ class ConcertsController < ApplicationController
 
     respond_to do |format|
       if @concert.update_attributes(params[:concert])
-        format.html { redirect_to @concert, notice: 'Concert was successfully updated.' }
+        format.html { redirect_to @concert, :notice => 'Concert was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @concert.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @concert.errors, :status =>:unprocessable_entity }
       end
     end
   end

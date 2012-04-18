@@ -50,22 +50,15 @@ GEM
       execjs
     coffee-script-source (1.2.0)
     commonjs (0.2.5)
-    differ (0.1.2)
-    dye (0.1.3)
-    ejs (1.0.0)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
     hike (1.2.1)
     hpricot (0.8.6)
     i18n (0.6.0)
-    irt (1.2.10)
-      differ (>= 0.1.1)
-      dye (>= 0.1.3)
-      prompter (>= 0.1.4)
     journey (1.0.3)
     jquery-rails (2.0.1)
-      railties (>= 3.2.0, < 5.0)
+      railties (< 5.0, >= 3.2.0)
       thor (~> 0.14)
     json (1.6.6)
     less (2.1.0)
@@ -82,9 +75,6 @@ GEM
     mime-types (1.18)
     multi_json (1.2.0)
     polyglot (0.3.3)
-    prompter (0.1.5)
-      dye (>= 0.1.1)
-      yard (>= 0.6.3)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -100,10 +90,6 @@ GEM
       activesupport (= 3.2.3)
       bundler (~> 1.0)
       railties (= 3.2.3)
-    rails-backbone (0.7.1)
-      coffee-script (~> 2.2.0)
-      ejs (~> 1.0.0)
-      railties (>= 3.1.0)
     railties (3.2.3)
       actionpack (= 3.2.3)
       activesupport (= 3.2.3)
@@ -122,7 +108,7 @@ GEM
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
+      tilt (!= 1.3.0, ~> 1.1)
     sqlite3 (1.3.5)
     therubyracer (0.10.0)
       libv8 (~> 3.3.10)
@@ -139,17 +125,14 @@ GEM
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
-    yard (0.7.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
-  irt
   jquery-rails
   rails (= 3.2.3)
-  rails-backbone
   rockstar!
   sass-rails (~> 3.2.3)
   sqlite3

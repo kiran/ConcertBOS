@@ -5,7 +5,7 @@ class ConcertsusersController < ApplicationController
     @concertsusers = ConcertsUser.all
 
     respond_to do |format|
-      format.json { render json: @concertsusers }
+      format.json { render :json => @concertsusers }
     end
   end
 
@@ -15,7 +15,7 @@ class ConcertsusersController < ApplicationController
     @concertsuser = ConcertsUser.find(params[:id])
 
     respond_to do |format|
-      format.json { render json: @concertsuser }
+      format.json { render :json => @concertsuser }
     end
   end
 
@@ -25,7 +25,7 @@ class ConcertsusersController < ApplicationController
     @concertsuser = ConcertsUser.new
 
     respond_to do |format|
-      format.json { render json: @concertsuser }
+      format.json { render :json => @concertsuser }
     end
   end
 
@@ -41,9 +41,9 @@ class ConcertsusersController < ApplicationController
 
     respond_to do |format|
       if @concertsuser.save
-        format.json { render json: @concertsuser, status: :created}
+        format.json { render :json => @concertsuser, :status => :created}
       else
-        format.json { render json: @concertsuser.errors, status: :unprocessable_entity }
+        format.json { render :json => @concertsuser.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -57,7 +57,7 @@ class ConcertsusersController < ApplicationController
       if @concertsuser.update_attributes(params[:concertsuser])
         format.json { head :no_content }
       else
-        format.json { render json: @concertsuser.errors, status: :unprocessable_entity }
+        format.json { render :json => @concertsuser.errors, :status => :unprocessable_entity }
       end
     end
   end

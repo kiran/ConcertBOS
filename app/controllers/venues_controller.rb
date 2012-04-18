@@ -6,7 +6,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @venues }
+      format.json { render :json => @venues }
     end
   end
 
@@ -18,7 +18,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @venue }
+      format.json { render :json => @venue }
     end
   end
 end

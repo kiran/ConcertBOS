@@ -24,8 +24,6 @@ end
 gem 'jquery-rails'
 gem 'rockstar', :git=>'git://github.com/bitboxer/rockstar.git'
 
-gem 'irt'
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
