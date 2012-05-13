@@ -31,14 +31,14 @@
 	 "age":0,
 	 "concert_id":23,
      "children": [
-      {"name": "Florence", 
-       "when":"Sunday, February 30", 
+      {"name": "Florence",
+       "when":"",
        "venue":"None",
 	   "price":10000,
 	   "age":0,
 	   "concert_id":5000
 	  },
-      {"name": "Good Old War", 
+      {"name": "Good Old War",
 		"when":"Thursday, Apr 26",
       "venue":"Paradise Rock Club",
       "price":15.00,
@@ -49,7 +49,7 @@
     },
     {
      "name": "Ellie Goulding",
-     "when":"Sunday, February 30",
+     "when":"",
 	 "venue":"None",
 	 "price":10000,
 	 "age":0,
@@ -84,7 +84,7 @@
     "price":15.00,
     "age":0,
     "concert_id": 19},
-    {"name": "Eric Hutchinson", 
+    {"name": "Eric Hutchinson",
             "when":"Tuesday, May 01",
             "venue":"Paradise Rock Club",
             "price":15.00,
@@ -94,3 +94,4 @@
   }
  ]
 }
+

@@ -49,23 +49,24 @@ window.paint = function() {
   			else if (d.price <= maxP)
   			{ val = "rgb(255,211,79)";}
   			else
-  			{ val = "lightgray";}
+  			{ val = "#795A5A";}
 
   		 if(!eighteen)
   		  {
   			if (d.age!=0)
   			{
-  				val = "lightgray";
+  				val = "#795A5A";
   			}
   		  }
   		  else if(!twentyOne)
   		  {
   			if (d.age===21)
   			{
-  				val = "lightgray"
+  				val = "#795A5A"
   			}
   		  }
 
+        if (d.price === 10000) {val = 'lightgray';}
   		return val;
 
   		})
