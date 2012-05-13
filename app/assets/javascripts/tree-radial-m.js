@@ -43,30 +43,31 @@ window.paint = function() {
   	  .style("fill", function(d)
   		{
   		  var val = "lightgray";
+  		  var desatred = "#795A5A";
 
   		if(d.price <= midP )
   			{ val = "rgb(255,116,35)";}
   			else if (d.price <= maxP)
   			{ val = "rgb(255,211,79)";}
   			else
-  			{ val = "#795A5A";}
+  			{ val = desatred;}
 
   		 if(!eighteen)
   		  {
   			if (d.age!=0)
   			{
-  				val = "#795A5A";
+  				val = desatred;
   			}
   		  }
   		  else if(!twentyOne)
   		  {
   			if (d.age===21)
   			{
-  				val = "#795A5A"
+  				val = desatred;
   			}
   		  }
 
-        if (d.price === 10000) {val = 'lightgray';}
+        if (d.concert_id >= 5000) {val = 'lightgray';}
   		return val;
 
   		})
@@ -95,7 +96,7 @@ window.paint = function() {
   	  if (d.concert_id >= 5000) return;
   		d3.select(this).style("stroke", "red");
   		selected.push( d.concert_id )
-  		console.log(d.concert_id)
+  		//console.log(d.concert_id)
 
   	  var id = d.concert_id;
       // set the user id to 1
@@ -129,7 +130,7 @@ window.paint = function() {
         .attr("dy", ".31em")
         .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
         .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
-        .text(function(d) { return d.name; });
+        .text(function(d) { return d.name+"\n\r"+d.when; });
   });
 };
 $(document).ready(function() {

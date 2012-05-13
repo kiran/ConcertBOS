@@ -38,7 +38,6 @@ d3.json("assets/friendData.json", function(json) {
 							return "#91E0F2"
 							}
 						else {
-						    console.log('hello?')
 							var val = "lightgray"
 
 							if(d.price <= $('#price-filter').slider('value')/2 )
@@ -63,6 +62,7 @@ d3.json("assets/friendData.json", function(json) {
 								}
 							  }
 
+                            if (d.concert_id >= 5000) {val = 'lightgray';}
 							return val;
 
 							};
