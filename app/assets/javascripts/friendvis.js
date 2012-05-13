@@ -35,9 +35,10 @@ d3.json("assets/friendData.json", function(json) {
       .style("background",
 					function(d) {
 						if(d.group === 0) {
-							return "lavender"
+							return "#91E0F2"
 							}
 						else {
+						    console.log('hello?')
 							var val = "lightgray"
 
 							if(d.price <= $('#price-filter').slider('value')/2 )

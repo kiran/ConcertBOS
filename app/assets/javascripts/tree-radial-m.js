@@ -4,7 +4,7 @@ window.paint = function() {
 
   maxP = $( "#price-filter" ).slider( "value" ); //range between mid price and max price
   midP = maxP/2; //price range cutoff 1 (lower)
-  var mouseIsDown = false; 
+  var mouseIsDown = false;
   var selected = []; //array of selected concert id's
   eighteen = ($('#eighteen').attr('checked') != 'checked'); //over 18
   twentyOne = ($('#twentyone').attr('checked') != 'checked'); //over 21
@@ -18,7 +18,6 @@ window.paint = function() {
 
   var vis = d3.select("#chart").append("svg")
       .attr("width", r * 2)
-      //.attr("height", r * 2 - 150)
       .attr("height", r * 2)
     .append("g")
       .attr("transform", "translate(" + r + "," + r + ")");
@@ -41,17 +40,17 @@ window.paint = function() {
     node.append("circle")
         .attr("r", 10)
   	  .style("stroke", function(d) { if(d.top >0) {return "darkorange"}})
-  	  .style("fill", function(d) 
-  		{ 
+  	  .style("fill", function(d)
+  		{
   		  var val = "lightgray";
-		  
-  		if(d.price <= midP ) 
-  			{ val = "rgb(255,116,35)";} 
-  			else if (d.price <= maxP) 
-  			{ val = "rgb(255,211,79)";} 
-  			else 
+
+  		if(d.price <= midP )
+  			{ val = "rgb(255,116,35)";}
+  			else if (d.price <= maxP)
+  			{ val = "rgb(255,211,79)";}
+  			else
   			{ val = "lightgray";}
-		  
+
   		 if(!eighteen)
   		  {
   			if (d.age!=0)
@@ -66,19 +65,19 @@ window.paint = function() {
   				val = "lightgray"
   			}
   		  }
-		
+
   		return val;
-		
+
   		})
-	  
-  	  .on("mouseover", function (d) 
+
+  	  .on("mouseover", function (d)
   	{
   		d3.select(this).style("stroke","maroon");
   	})
   	  .on("mouseout", function (d)
-  	{  
+  	{
   		d3.select(this).style("stroke",
-  		function (d) 
+  		function (d)
   		{
   			if(selected.indexOf(d.concert_id)<0)
   			{
@@ -90,13 +89,13 @@ window.paint = function() {
   			}
   		});
   	})
-  	  .on("mousedown", function (d) 
+  	  .on("mousedown", function (d)
   	{
   	  if (d.concert_id >= 5000) return;
   		d3.select(this).style("stroke", "red");
   		selected.push( d.concert_id )
   		console.log(d.concert_id)
-		
+
   	  var id = d.concert_id;
       // set the user id to 1
       var info = JSON.stringify({'concert_id':id,'user_id':1});
@@ -107,11 +106,11 @@ window.paint = function() {
         var marker = "<a href=concerts/"+d.concert_id+" class='btn btn-inverse btn-mini'></div>";
         marker = $(marker).text(d.name+" "+d.when);
         var div = "<div class='concerts'></div>";
-        
+
         var x = "<br><i class='icon-remove'></i>"
         x = $(x).attr('id', e.id);
         console.log(e.id);
-        
+
         $(div).append(marker)
           .append(x)
           .appendTo(list).fadeIn();
@@ -120,7 +119,7 @@ window.paint = function() {
       var options = {url : '/concertsusers', type: 'POST', // URL and method to call
         contentType : 'application/json', dataType: 'json', // send and receive data from the server as JSON}
         data: info, success:success};
-      
+
       $.ajax(options);
   	});
 
@@ -135,3 +134,4 @@ window.paint = function() {
 $(document).ready(function() {
   window.paint();
 });
+
