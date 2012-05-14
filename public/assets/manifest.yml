@@ -1,9 +1,14 @@
 ---
 boston-map.png: boston-map-6794770b8cf93853ea36f9bb3d85a01e.png
 favicon.ico: favicon-21745b83cfee81c1f1d8451d2ab28ab2.ico
-application.js: application-3fea2cf696a355902fd4bafd777b3c3a.js
-dummydata.json: dummydata-1685c2ddedf01f6943c841d8597084c4.json
-friendData.json: friendData-7a1b8b5c18d1494085372caf5e365f8d.json
-application.css: application-a3f77bc6e980f7c746ff42ee01c984ef.css
+application.js: application-23ce8b3cb718ac052327010631abcc56.js
+friendData.json: friendData-5769307ead0e8b19ba4dc711bad5326e.json
+realdata.json: realdata-96f46afd38f8e648617adf4a2aa208be.json
+application.css: application-d659b6c0064021600c18236f02746d1a.css
+fontawesome-webfont.eot: fontawesome-webfont-eeecec082197cc0255b0c549b4e612ea.eot
+fontawesome-webfont.svg: fontawesome-webfont-8276485587c7ff2e54d7422809134349.svg
+fontawesome-webfont.svgz: fontawesome-webfont-d5b0cb5aed6480abcf670ba04f391ad3.svgz
+fontawesome-webfont.ttf: fontawesome-webfont-a01aacd973fb4d032729f9c498683caa.ttf
+fontawesome-webfont.woff: fontawesome-webfont-b6a0f80a39a7f60a250fad1e8e2ecf8b.woff
 twitter/bootstrap/glyphicons-halflings-white.png: twitter/bootstrap/glyphicons-halflings-white-4fbb6a0b9b4e61912f486ac494a858f1.png
 twitter/bootstrap/glyphicons-halflings.png: twitter/bootstrap/glyphicons-halflings-2ed0cba6eca0f44737ab78f1e58bc11e.png
