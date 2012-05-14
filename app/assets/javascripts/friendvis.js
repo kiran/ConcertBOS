@@ -40,12 +40,16 @@ d3.json("assets/friendData.json", function(json) {
 						else {
 							var val = "lightgray"
 
-							if(d.price <= $('#price-filter').slider('value')/2 )
-								{ val = "rgb(255,156,75)";}
-							else if (d.price <= $('#price-filter').slider('value'))
-								{ val ="rgb(255,211,79)";}
-							else
-								{ val = "lightgray";}
+							  		if(d.price <= 10 )
+                              			{ val = "#FFFFD4";}
+                              	    else if (d.price <= 20)
+                              			{ val = "#FED98E";}
+                              	    else if (d.price <= 30)
+                              			{ val = "#FE9929";}
+                              	    else if (d.price <= 40)
+                              			{ val = "#D95F0E";}
+                              	    else if (d.price <= 50)
+                              			{ val = "#993404";}
 
 							 if(!eighteen)
 							  {
@@ -73,26 +77,15 @@ d3.json("assets/friendData.json", function(json) {
 	{
 		if(d.group > 0) {
 			d3.select(this).style("border-style","solid");
-			d3.select(this).style("border-color","maroon");
+  		    d3.select(this).style("border-color","#993404");
 		}
 	})
 
 	.on("mouseout", function (d)
 	{
 		if(d.group > 0) {
-			d3.select(this).style("border-style","solid")
-			d3.select(this).style("border-color",
-			function (d)
-			{
-				if(selected.indexOf(d.concert_id)<0)
-				{
-					return "transparent";
-				}
-				else
-				{
-					return "orange";
-				}
-			})
+			d3.select(this).style("border-style","solid");
+  		    d3.select(this).style("border-color", 'transparent');
 		}
 	})
 

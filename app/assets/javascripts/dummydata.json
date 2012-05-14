@@ -19,7 +19,7 @@
      "name": "Hot Chelle Rae",
      "when":"Friday, Apr 13",
      "venue":"Paradise Rock Club",
-     "price":15.00,
+     "price":35.00,
      "age":0,
 	 "concert_id":7
     },
@@ -27,7 +27,7 @@
      "name": "Neon Trees",
      "when":"Monday, May 07",
 	 "venue":"Paradise Rock Club",
-	 "price":20.00,
+	 "price":45.00,
 	 "age":0,
 	 "concert_id":23,
      "children": [
@@ -41,7 +41,7 @@
       {"name": "Good Old War",
 		"when":"Thursday, Apr 26",
       "venue":"Paradise Rock Club",
-      "price":15.00,
+      "price":5.00,
       "age":18,
       "concert_id":18
       }
@@ -58,7 +58,7 @@
       {"name": "Trampled by Turtles",
 		"when":"Wednesday, April 18",
       "venue":"Paradise Rock Club",
-      "price":20.00,
+      "price":30.00,
       "age":18,
       "concert_id":12},
 	  {"name": "Washed Out",

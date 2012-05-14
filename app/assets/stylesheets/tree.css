@@ -1,6 +1,7 @@
 .node circle {
   fill: #fff;
   stroke-width: 1.5px;
+  stroke: #FE9929;
 }
 
 .node {
@@ -16,3 +17,4 @@
 .node:hover {
   cursor: pointer;
 }
+

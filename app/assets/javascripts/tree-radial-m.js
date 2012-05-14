@@ -3,7 +3,6 @@ window.paint = function() {
   var r = 500 / 2;
 
   maxP = $( "#price-filter" ).slider( "value" ); //range between mid price and max price
-  midP = maxP/2; //price range cutoff 1 (lower)
   var mouseIsDown = false;
   var selected = []; //array of selected concert id's
   eighteen = ($('#eighteen').attr('checked') != 'checked'); //over 18
@@ -45,12 +44,17 @@ window.paint = function() {
   		  var val = "lightgray";
   		  var desatred = "#795A5A";
 
-  		if(d.price <= midP )
-  			{ val = "rgb(255,116,35)";}
-  			else if (d.price <= maxP)
-  			{ val = "rgb(255,211,79)";}
-  			else
-  			{ val = desatred;}
+  		if(d.price <= 10 )
+  			{ val = "#FFFFD4";}
+  	    else if (d.price <= 20)
+  			{ val = "#FED98E";}
+  	    else if (d.price <= 30)
+  			{ val = "#FE9929";}
+  	    else if (d.price <= 40)
+  			{ val = "#D95F0E";}
+  	    else if (d.price <= 50)
+  			{ val = "#993404";}
+
 
   		 if(!eighteen) {
   			if (d.age!=0) {
@@ -68,20 +72,11 @@ window.paint = function() {
 
   	  .on("mouseover", function (d)
   	{
-  		d3.select(this).style("stroke","maroon");
+  		d3.select(this).style("stroke","#993404");
   	})
   	  .on("mouseout", function (d)
   	{
-  		d3.select(this).style("stroke",
-  		function (d)
-  		{
-  			if(selected.indexOf(d.concert_id)<0) {
-  				return "white"
-  			}
-  			else {
-  				return "red"
-  			}
-  		});
+  		d3.select(this).style("stroke", '#FE9929');
   	})
   	  .on("click", function (d)
   	{
