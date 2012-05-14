@@ -1,0 +1,23 @@
+Sun, 13 May 2012 20:17:42 -0400
+doc/README_FOR_APP	Mon, 02 Apr 2012 21:42:28 -0400
+app/models/user.rb	Sun, 15 Apr 2012 18:51:43 -0400
+app/models/concert.rb	Sun, 15 Apr 2012 18:51:43 -0400
+app/models/venue.rb	Mon, 02 Apr 2012 22:59:15 -0400
+app/models/artist.rb	Mon, 02 Apr 2012 22:59:13 -0400
+app/models/concerts_user.rb	Sun, 15 Apr 2012 18:51:43 -0400
+app/helpers/application_helper.rb	Mon, 02 Apr 2012 21:42:28 -0400
+app/helpers/concertsusers_helper.rb	Sun, 15 Apr 2012 00:48:55 -0400
+app/helpers/friends_vis_helper.rb	Sun, 15 Apr 2012 11:58:01 -0400
+app/helpers/artists_helper.rb	Fri, 06 Apr 2012 03:12:30 -0400
+app/helpers/concerts_helper.rb	Mon, 02 Apr 2012 22:58:50 -0400
+app/helpers/layout_helper.rb	Thu, 05 Apr 2012 03:01:16 -0400
+app/helpers/artist_vis_helper.rb	Sun, 15 Apr 2012 01:22:15 -0400
+app/helpers/venues_helper.rb	Thu, 05 Apr 2012 01:21:55 -0400
+app/controllers/concertsusers_controller.rb	Wed, 18 Apr 2012 07:09:38 -0400
+app/controllers/venues_controller.rb	Wed, 18 Apr 2012 07:09:38 -0400
+app/controllers/application_controller.rb	Mon, 02 Apr 2012 21:42:28 -0400
+app/controllers/friends_vis_controller.rb	Sun, 15 Apr 2012 12:01:35 -0400
+app/controllers/artists_controller.rb	Wed, 18 Apr 2012 07:09:38 -0400
+app/controllers/artist_vis_controller.rb	Sun, 15 Apr 2012 11:56:46 -0400
+app/controllers/concerts_controller.rb	Wed, 18 Apr 2012 07:09:38 -0400
+app/controllers/welcome_controller.rb	Sun, 15 Apr 2012 18:51:43 -0400
