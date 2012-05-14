@@ -27,9 +27,8 @@ gem 'jquery-rails'
 
 
 gem "watu_table_builder", :require => "table_builder"
-
-
 gem 'json'
+gem 'Net'
 
 
 # To use ActiveModel has_secure_password

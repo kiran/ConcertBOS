@@ -8,6 +8,8 @@
 
 
 <% 
+require 'net/http'
+
 apikey = 'XWFTVJGWYLPYSCF3K'
 surl = ["http://developer.echonest.com/api/v4/artist/profile?name=#{@artist.name.gsub(' ','+')}&api_key=#{apikey}&bucket=songs&bucket=images&bucket=biographies","http://developer.echonest.com/api/v4/artist/similar?api_key=#{apikey}&name=#{@artist.name.gsub(' ','+')}"]
 
