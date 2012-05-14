@@ -1,5 +1,13 @@
 <% title "Calendar" %>
 
+<% content_for :filterbar do %>
+    <%=  render :partial => 'common-partials/filterbar' %>
+
+    <h2>Info:</h2>
+    <p>Click on a concert to indicate interest.
+    <p>Click on <icon class='icon-chevron-right'> </i> to see more about the concert.
+<% end %>
+
 <div id='calendar'>
     <h2 id="month">
         <%= link_to :month => (@date.beginning_of_month-1).strftime("%Y-%m-01") do %>
@@ -16,9 +24,14 @@
       <%= t.day do |day, concerts| %>
         <%= day.day %>
         <% concerts.each do |concert| %>
-            <br>
-            <%= link_to concert, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
+            <p>
+            <%= link_to '', :class => "concert "+color(concert.price),
+                    :data => {:date =>  (l concert.date, :format=>:day), :id => concert.id, } do %>
                 <%= h(concert.artist.name) %>
+            <% end %>
+            &nbsp;
+            <%= link_to concert do %>
+                    <icon class='icon-chevron-right'> </i>
             <% end %>
         <% end %>
       <% end %>

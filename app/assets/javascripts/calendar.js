@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  $('#calendar .concert-node').live('click', function(e, ui) {
+  $('#calendar .concert').live('click', function(e, ui) {
     e.preventDefault();
     addPreference($(e.target));
   });
 
     function addPreference (item) {
         // get the concert id
-        var id =item.attr('id');
+        var id =item.data('id');
 
         // set the user id to 1
         var info = JSON.stringify({'concert_id':id,'user_id':1});
@@ -14,7 +14,7 @@ $(document).ready(function() {
         var success = function(e) {
           var list = $('#concerts-list');
           var marker = item.clone();
-          marker.attr('id', e.id);
+          marker.attr('id', item.data('id'));
           marker.text(item.text() + '\n' + item.data('date'));
           marker.appendTo(list);
           list.append("<i class='icon-remove'></i>");

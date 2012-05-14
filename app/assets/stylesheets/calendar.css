@@ -65,3 +65,14 @@
   text-align: center;
 }
 
+#calendar .concert, #concerts-list .concert {
+    width: 70%;
+    border-radius: 3px;
+    color: #333;
+    font: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 11px;
+    padding: 2px;
+    text-align: center;
+    display: inline-block;
+}
+
