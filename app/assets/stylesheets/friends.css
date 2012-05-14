@@ -1,4 +1,5 @@
 circle.node {
+  cursor: pointer;
   stroke: #999;
   stroke-width: 1.5px;
 }
@@ -22,7 +23,7 @@ div.node {
 
 div.link {
   position: absolute;
-  border-bottom: solid #999 1px;
+  border-bottom: solid #9ecae1 1px;
   height: 0;
   -webkit-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
@@ -32,6 +33,8 @@ div.link {
 }
 
 line.link {
-  stroke: #999;
   stroke-opacity: .6;
+  stroke: #9ecae1;
+  stroke-width: 1.5px;
 }
+

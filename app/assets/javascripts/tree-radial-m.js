@@ -52,24 +52,18 @@ window.paint = function() {
   			else
   			{ val = desatred;}
 
-  		 if(!eighteen)
-  		  {
-  			if (d.age!=0)
-  			{
+  		 if(!eighteen) {
+  			if (d.age!=0) {
   				val = desatred;
   			}
   		  }
-  		  else if(!twentyOne)
-  		  {
-  			if (d.age===21)
-  			{
+  		  else if(!twentyOne) {
+  			if (d.age===21) {
   				val = desatred;
   			}
   		  }
-
         if (d.concert_id >= 5000) {val = 'lightgray';}
-  		return val;
-
+      		return val;
   		})
 
   	  .on("mouseover", function (d)
@@ -81,48 +75,45 @@ window.paint = function() {
   		d3.select(this).style("stroke",
   		function (d)
   		{
-  			if(selected.indexOf(d.concert_id)<0)
-  			{
+  			if(selected.indexOf(d.concert_id)<0) {
   				return "white"
   			}
-  			else
-  			{
+  			else {
   				return "red"
   			}
   		});
   	})
-  	  .on("mousedown", function (d)
+  	  .on("click", function (d)
   	{
   	  if (d.concert_id >= 5000) return;
   		d3.select(this).style("stroke", "red");
   		selected.push( d.concert_id )
-  		//console.log(d.concert_id)
 
-  	  var id = d.concert_id;
-      // set the user id to 1
-      var info = JSON.stringify({'concert_id':id,'user_id':1});
-      // add to the list on success
-      var success = function(e) {
-        // add a div with a remove button and a more link
-        var list = $('#concerts-list');
-        var marker = "<a href=concerts/"+d.concert_id+" class='btn btn-inverse btn-mini'></div>";
-        marker = $(marker).text(d.name+" "+d.when);
-        var div = "<div class='concerts'></div>";
+        var id = d.concert_id;
+        // set the user id to 1
+        var info = JSON.stringify({'concert_id':id,'user_id':1});
+        // add to the list on success
+        var success = function(e) {
+            // add a div with a remove button and a more link
+            var list = $('#concerts-list');
+            var marker = "<a href=concerts/"+d.concert_id+" class='btn btn-inverse btn-mini'></div>";
+            marker = $(marker).text(d.name+" "+d.when);
+            var div = "<div class='concerts'></div>";
 
-        var x = "<br><i class='icon-remove'></i>"
-        x = $(x).attr('id', e.id);
-        console.log(e.id);
+            var x = "<br><i class='icon-remove'></i>"
+            x = $(x).attr('id', e.id);
+            console.log(e.id);
 
-        $(div).append(marker)
-          .append(x)
-          .appendTo(list).fadeIn();
-      }
-      // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create
-      var options = {url : '/concertsusers', type: 'POST', // URL and method to call
-        contentType : 'application/json', dataType: 'json', // send and receive data from the server as JSON}
-        data: info, success:success};
+            $(div).append(marker)
+              .append(x)
+              .appendTo(list).fadeIn();
+        }
+        // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create
+        var options = {url : '/concertsusers', type: 'POST', // URL and method to call
+            contentType : 'application/json', dataType: 'json', // send and receive data from the server as JSON}
+            data: info, success:success};
 
-      $.ajax(options);
+        $.ajax(options);
   	});
 
     node.append("text")
@@ -130,10 +121,19 @@ window.paint = function() {
         .attr("dy", ".31em")
         .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
         .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
-        .text(function(d) { return d.name+"\n\r"+d.when; });
+        .text(function(d) { return d.name; });
   });
+
 };
-$(document).ready(function() {
-  window.paint();
+$(function() {
+    window.paint();
+    $('#chart').tooltip({
+        selector: 'svg circle',
+        title: function() {
+           var d = this.__data__;
+           if (d.concert_id >= 5000) return;
+           return d.when+"<br>$"+d.price;
+        }
+    });
 });
 

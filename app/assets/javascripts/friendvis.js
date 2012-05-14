@@ -1,12 +1,12 @@
 window.fpaint = function() {
-    $('#friends-chart').empty();
+$('#friends-chart').empty();
 
-    var maxP = $('#price-filter').slider('value'); //range between mid price and max price
-    var midP = maxP/2; //price range cutoff 1 (lower)
-    var mouseIsDown = false;
-    var selected = []; //array of selected concert id's
-    var eighteen = ($('#eighteen').attr('checked') != 'checked'); //over 18
-    var twentyOne = ($('#twentyone').attr('checked') != 'checked'); //over 21
+var maxP = $('#price-filter').slider('value'); //range between mid price and max price
+var midP = maxP/2; //price range cutoff 1 (lower)
+var mouseIsDown = false;
+var selected = []; //array of selected concert id's
+var eighteen = ($('#eighteen').attr('checked') != 'checked'); //over 18
+var twentyOne = ($('#twentyone').attr('checked') != 'checked'); //over 21
 
 var w = 700,
     h = 400,
@@ -90,29 +90,46 @@ d3.json("assets/friendData.json", function(json) {
 				}
 				else
 				{
-					return "maroon";
+					return "orange";
 				}
 			})
 		}
 	})
 
-	.on("mousedown", function (d)
+	.on("click", function (d)
 	{
-		if(d.group > 0  && selected.indexOf(d.concert_id)<0)
-		{
-			d3.select(this).style("border-color", "maroon");
-			selected.push( d.concert_id );
-		}
+		d3.select(this).style("stroke", "red");
+  		selected.push( d.concert_id )
+
+        var id = d.concert_id;
+        // set the user id to 1
+        var info = JSON.stringify({'concert_id':id,'user_id':1});
+        // add to the list on success
+        var success = function(e) {
+            // add a div with a remove button and a more link
+            var list = $('#concerts-list');
+            var marker = "<a href=concerts/"+d.concert_id+" class='btn btn-inverse btn-mini'></div>";
+            marker = $(marker).text(d.name+" "+d.when);
+            var div = "<div class='concerts'></div>";
+
+            var x = "<br><i class='icon-remove'></i>"
+            x = $(x).attr('id', e.id);
+            console.log(e.id);
+
+            $(div).append(marker)
+              .append(x)
+              .appendTo(list).fadeIn();
+        }
+        // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create
+        var options = {url : '/concertsusers', type: 'POST', // URL and method to call
+            contentType : 'application/json', dataType: 'json', // send and receive data from the server as JSON}
+            data: info, success:success};
+
+        $.ajax(options);
 	})
 
 
       .call(force.drag);
-
-
-
-
-
-
 
 
   force
@@ -127,8 +144,6 @@ d3.json("assets/friendData.json", function(json) {
 	      .attr("text-anchor", function(d) { return d.x < 180 ? 100 : "end"; })
 	      .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
 	      .text(function(d) { return d.name; });
-
-
 
 
   function tick() {
@@ -159,5 +174,14 @@ d3.json("assets/friendData.json", function(json) {
 
 $(document).ready( function() {
     window.fpaint();
+    $('#friends-chart').tooltip({
+        selector: '.node',
+        title: function() {
+           var d = this.__data__;
+           if (d.group == 0) return;
+           if (d.concert_id >= 5000) return;
+           return d.when+"<br>$"+d.price;
+        }
+    });
 });
 
