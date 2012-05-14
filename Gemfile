@@ -22,7 +22,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'rockstar', :git=>'git://github.com/bitboxer/rockstar.git'
+
+# calendar
+gem "watu_table_builder", :require => "table_builder"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
