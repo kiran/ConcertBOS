@@ -25,7 +25,7 @@
         <%= day.day %>
         <% concerts.each do |concert| %>
             <p>
-            <%= link_to concert, :class => "concert "+color(concert.price),
+            <%= link_to concert, :class => "concert "+color(concert.price)+' '+age(concert),
                     :data => {:date =>  (l concert.date, :format=>:day), :id => concert.id, } do %>
                 <%= h(concert.artist.name) %>
             <% end %>
