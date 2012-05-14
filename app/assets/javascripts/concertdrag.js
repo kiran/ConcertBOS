@@ -17,7 +17,6 @@ $(document).ready(function() {
 
   $('#concerts-list .icon-remove').live('click', function(e){
     e.preventDefault();
-    window.e = e;
     deletePreference($(e.target));
   });
 
@@ -32,10 +31,13 @@ $(document).ready(function() {
     var success = function(e) {
       var list = $('#concerts-list');
       var marker = item.clone();
+      var div = '<div></div>';
+      div = $(div);
       marker.attr('id', e.id);
       marker.text(item.text());
-      marker.appendTo(list);
-      list.append("<i class='icon-remove'></i>");
+      div = div.append(marker);
+      div = $(div).append("<i class='icon-remove' id="+e.id+"></i>");
+      list.append(div);
     }
     // send to the server: {concert_id: xx, user_id: 1}, method = POST, url = concertsusers/create
     var options = {url : '/concertsusers', type: 'POST', // URL and method to call
