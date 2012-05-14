@@ -21,7 +21,7 @@ window.paint = function() {
     .append("g")
       .attr("transform", "translate(" + r + "," + r + ")");
 
-  d3.json("assets/dummydata.json", function(json) {
+  d3.json("assets/realdata.json", function(json) {
     var nodes = tree.nodes(json);
 
     var link = vis.selectAll("path.link")
@@ -127,7 +127,7 @@ $(function() {
         title: function() {
            var d = this.__data__;
            if (d.concert_id >= 5000) return;
-           return d.when+"<br>$"+d.price;
+           return d.when+"<br>$"+d.name;
         }
     });
 });

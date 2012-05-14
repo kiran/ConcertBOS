@@ -24,8 +24,13 @@ end
 
 gem 'jquery-rails'
 
-# calendar
+
+
 gem "watu_table_builder", :require => "table_builder"
+
+
+gem 'json'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
