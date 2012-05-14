@@ -1,0 +1,17 @@
+<% title "Calendar" %>
+
+<div id='calendar'>
+    <%= calendar_for(@concerts) do |t| %>
+      <%= t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') %>
+      <%= t.day do |day, concerts| %>
+        <%= day.day %>
+        <% concerts.each do |concert| %>
+            <br>
+            <%= link_to concert, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
+                <%= h(concert.artist.name) %>
+            <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+</div>
+

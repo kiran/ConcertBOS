@@ -11,6 +11,10 @@ $(document).ready(function() {
   	}
   });
 
+  $('#concerts .drag').live('click', function(e, ui) {
+    addPreference($(e.target));
+  });
+
   $('#concerts-list .icon-remove').live('click', function(e){
     e.preventDefault();
     window.e = e;
@@ -29,7 +33,7 @@ $(document).ready(function() {
       var list = $('#concerts-list');
       var marker = item.clone();
       marker.attr('id', e.id);
-      marker.text(item.parent().siblings().text());
+      marker.text(item.text());
       marker.appendTo(list);
       list.append("<i class='icon-remove'></i>");
     }

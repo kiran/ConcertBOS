@@ -1,0 +1,4 @@
+class CalendarController < ConcertsController
+
+end
+
