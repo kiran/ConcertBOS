@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require 'font-awesome'
 */
 footer {
     padding-top: 17px;
@@ -20,5 +21,9 @@ footer {
 
 #chart{
     border:2em
+}
+
+body {
+    font: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 

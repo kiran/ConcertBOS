@@ -14,5 +14,15 @@ module ApplicationHelper
         tag(:li, {:class => class_name}, true)
     end
 
+    def color (price)
+        case price=price.to_i
+            when  0..9 then 'btn0'
+            when 10..19 then 'btn1'
+            when 20..29 then 'btn2'
+            when 30..39 then 'btn3'
+            when 40..200 then 'btn4'
+        end
+    end
+
 end
 

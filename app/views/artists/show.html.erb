@@ -1,5 +1,4 @@
 <% title @artist.name
- artist = Rockstar::Artist.new(@artist.name, :include_info => true)
   %>
 
 <dl>
@@ -8,7 +7,29 @@
 </dl>
 
 
-<img src=<%= artist.image(which = :extralarge) %> >
+<% 
+require 'net/http'
+
+apikey = 'XWFTVJGWYLPYSCF3K'
+surl = ["http://developer.echonest.com/api/v4/artist/profile?name=#{@artist.name.gsub(' ','+')}&api_key=#{apikey}&bucket=songs&bucket=images&bucket=biographies","http://developer.echonest.com/api/v4/artist/similar?api_key=#{apikey}&name=#{@artist.name.gsub(' ','+')}"]
+
+#list_adjectives
+url=[]
+req=[]
+res=[]
+surl.each_with_index do |s,i|
+  url[i] = URI.parse(s)
+  req[i] = Net::HTTP::Get.new(s)
+  res[i] = Net::HTTP.start(url[i].host,url[i].port){|http|
+    http.request(req[i])
+  }
+end
+imgsrc = JSON.parse(res[0].body)["response"]["artist"]["images"][0]["url"]
+bio = JSON.parse(res[0].body)["response"]["artist"]["biographies"][1]["text"]
+%>
+
+<img src=<%= imgsrc %> >
+
 
 
 <table class="table-bordered table-striped table">
@@ -19,9 +40,9 @@
   </thead>
 
   <tbody>
-  <% artist.top_tracks.slice(0,5).each do |track| %>
+  <% JSON.parse(res[0].body)["response"]["artist"]["songs"].slice(0,5).each do |song| %>
     <tr>
-      <td><%= track.name %></td>
+      <td><%= song["title"] %></td>
     </tr>
   <% end %>
   </tbody>
@@ -37,9 +58,9 @@
   </thead>
 
   <tbody>
-  <% artist.similar.slice(0,5).each do |sim| %>
+  <% JSON.parse(res[1].body)["response"]["artists"].slice(0,5).each do |sim| %>
     <tr>
-      <td><%= sim.name %></td>
+      <td><%= sim["name"] %></td>
     </tr>
  <% end %>
   </tbody>

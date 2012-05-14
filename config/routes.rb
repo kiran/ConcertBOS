@@ -18,8 +18,6 @@ ConcertBOS::Application.routes.draw do
   match 'start' => 'welcome#start'
   match 'artist_vis' => 'artist_vis#index'
   match 'friends_vis' => 'friends_vis#index'
-  #match 'calendar' => 'calendar#index'
-  match 'get-similar' => 'artists#getSimilar'
 
 
 

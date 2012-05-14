@@ -19,12 +19,17 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
+  gem 'font-awesome-rails'
 end
 
 gem 'jquery-rails'
 
-# calendar
+
+
 gem "watu_table_builder", :require => "table_builder"
+gem 'json'
+gem 'Net'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

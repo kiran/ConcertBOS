@@ -2,26 +2,36 @@
   font-size: 110%;
 }
 
-#price-filter {
-		width: 100%;
+.price-legend {
+		width: 20%;
+		height: 25px;
 		margin-bottom: 15px;
+		background: #FFFFD4;
+		float: left;
+		font-size: 10px;
+		border-top: 1px solid #993404;
+		border-bottom: 1px solid #993404;
+		padding-top: 5px;
 }
-#price-filter .ui-slider-range { 
-   background-image: linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
-   background-image: -o-linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
-   background-image: -moz-linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
-   background-image: -webkit-linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
-   background-image: -ms-linear-gradient(left , rgb(255,116,35) 11%, rgb(255,211,79) 52%);
 
-   background-image: -webkit-gradient(
-   	linear,
-   	left bottom,
-   	right bottom,
-   	color-stop(0.11, rgb(255,116,35)),
-   	color-stop(0.52, rgb(255,211,79))
-   );
+#price-legend0 {
+    background: #FFFFD4;
+    border-top-left-radius: 6px 6px;
+    border-bottom-left-radius: 6px 6px;
+    border: 1px solid #993404;
+    border-right: 0px;
 }
-#price-filter .ui-slider-handle { border-color: #F17223; }
+#price-legend1 { background: #FED98E }
+#price-legend2 { background: #FE9929 }
+#price-legend3 { background: #D95F0E; color: #FFFFD4; }
+#price-legend4 {
+    background: #993404;
+    color: #FFFFD4;
+    border-top-right-radius: 6px 6px;
+    border-bottom-right-radius: 6px 6px;
+    border: 1px solid #993404;
+    border-left: 0px;
+}
 
 .icon-remove {
   float: left;
@@ -31,3 +41,4 @@
   width: 75%;
   float: left;
 }
+
