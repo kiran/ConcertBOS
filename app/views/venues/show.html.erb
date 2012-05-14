@@ -24,3 +24,28 @@
     All Venues
 <% end %>
 
+
+<table class="table-bordered table-striped table">
+  <thead>
+  <tr>
+    <th>UPCOMING CONCERTS</th>
+  </tr>
+
+    <tr>
+      <td>DATE</td>
+      <td>ARTIST</td>
+      <td>PRICE</td>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @venue.concerts.each do |concert| %>
+    <tr>
+      <td><%= concert['date'] %></td>
+      <td><%= link_to concert.artist.name, concert.artist %></td>
+      <td><%= concert['price'] %></td>
+    </tr>
+    
+  <% end %>
+  </tbody>
+</table>
