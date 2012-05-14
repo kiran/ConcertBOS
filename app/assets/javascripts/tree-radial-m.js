@@ -5,8 +5,8 @@ window.paint = function() {
   maxP = $( "#price-filter" ).slider( "value" ); //range between mid price and max price
   var mouseIsDown = false;
   var selected = []; //array of selected concert id's
-  eighteen = ($('#eighteen').attr('checked') != 'checked'); //over 18
-  twentyOne = ($('#twentyone').attr('checked') != 'checked'); //over 21
+  var eighteen = ($('#eighteen').attr('checked') === 'checked'); // under 18
+  var twentyOne = ($('#twentyone').attr('checked') === 'checked'); // under 21
 
   var tree = d3.layout.tree()
       .size([360, r - 120])
@@ -52,18 +52,18 @@ window.paint = function() {
   			{ val = "#FE9929";}
   	    else if (d.price <= 40)
   			{ val = "#D95F0E";}
-  	    else if (d.price <= 50)
+  	    else
   			{ val = "#993404";}
 
 
-  		 if(!eighteen) {
+  		 if(eighteen) {
   			if (d.age!=0) {
-  				val = desatred;
+  				val = '#C9F5FF';
   			}
   		  }
-  		  else if(!twentyOne) {
+  		  else if(twentyOne) {
   			if (d.age===21) {
-  				val = desatred;
+  				val = '#C9F5FF';
   			}
   		  }
         if (d.concert_id >= 5000) {val = 'lightgray';}
@@ -128,7 +128,7 @@ $(function() {
         title: function() {
            var d = this.__data__;
            if (d.concert_id >= 5000) return d.name;
-           return d.when+"<br>$"+d.name;
+           return d.name+'<br>'+d.when+"<br>$"+d.price;
         }
     });
 });

@@ -5,8 +5,8 @@ var maxP = $('#price-filter').slider('value'); //range between mid price and max
 var midP = maxP/2; //price range cutoff 1 (lower)
 var mouseIsDown = false;
 var selected = []; //array of selected concert id's
-var eighteen = ($('#eighteen').attr('checked') != 'checked'); //over 18
-var twentyOne = ($('#twentyone').attr('checked') != 'checked'); //over 21
+var eighteen = ($('#eighteen').attr('checked') == 'checked'); // under 18
+var twentyOne = ($('#twentyone').attr('checked') == 'checked'); // under 21
 
 var w = 700,
     h = 400,
@@ -51,18 +51,18 @@ d3.json("assets/friendData.json", function(json) {
                               	    else
                               			{ val = "#993404";}
 
-							 if(!eighteen)
+							 if(eighteen)
 							  {
 								if (d.age!=0)
 								{
 									val = "lightgray";
 								}
 							  }
-							  else if(!twentyOne)
+							  else if(twentyOne)
 							  {
 								if (d.age===21)
 								{
-									val = "lightgray"
+									val = "lightgray";
 								}
 							  }
 
