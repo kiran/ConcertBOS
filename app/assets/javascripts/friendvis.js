@@ -14,7 +14,7 @@ var w = 700,
     fill = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-250)
+    .charge(-450)
     .linkDistance(70)
     .size([w, h]);
 
@@ -48,7 +48,7 @@ d3.json("assets/friendData.json", function(json) {
                               			{ val = "#FE9929";}
                               	    else if (d.price <= 40)
                               			{ val = "#D95F0E";}
-                              	    else if (d.price <= 50)
+                              	    else
                               			{ val = "#993404";}
 
 							 if(!eighteen)
@@ -173,7 +173,7 @@ $(document).ready( function() {
            var d = this.__data__;
            if (d.group == 0) return;
            if (d.concert_id >= 5000) return;
-           return d.when+"<br>$"+d.price;
+           return d.name+'<br>'+d.when+"<br>$"+d.price;
         }
     });
 });
