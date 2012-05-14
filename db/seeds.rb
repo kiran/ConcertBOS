@@ -30,3 +30,4 @@ open("db/seeds/concerts.csv") do |concerts|
       Concert.create!(:artist=>artist, :venue=>venue, :price=>price, :over18=>over18, :over21=>over21, :date=>date)
     end
 end
+
