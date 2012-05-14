@@ -1,7 +1,17 @@
 <% title "Calendar" %>
 
 <div id='calendar'>
-    <%= calendar_for(@concerts) do |t| %>
+    <h2 id="month">
+        <%= link_to :month => (@date.beginning_of_month-1).strftime("%Y-%m-01") do %>
+            <i class= 'icon-step-backward'> </i>
+        <% end %>
+        <%= h @date.strftime("%B %Y") %>
+        <%= link_to :month => (@date.end_of_month+1).strftime("%Y-%m-01") do %>
+            <i class='icon-step-forward'> </i>
+        <% end %>
+    </h2>
+
+    <%= calendar_for(@concerts, :year => @date.year, :month => @date.month) do |t| %>
       <%= t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') %>
       <%= t.day do |day, concerts| %>
         <%= day.day %>
