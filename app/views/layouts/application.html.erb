@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? yield(:title) : "ConcertBOS" %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="/assets/favicon.ico"/>
-  <link href = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/themes/ui-lightness/jquery-ui.css", rel = "stylesheet", type = "text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "ConcertBOS" %></title>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
+
+    <link rel="shortcut icon" href="/assets/favicon.ico"/>
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/themes/ui-lightness/jquery-ui.css", rel = "stylesheet", type = "text/css" />
 </head>
 <body>
 
 <%= render :partial => 'common-partials/navmenu' %>
 
-<div class="container">
+<div class="container-fluid">
   <div class="content">
     <div class="page-header">
         <h1><%= content_for?(:title) ? yield(:title) : 'ConcertBOS' %></h1>
     </div>
-    <div class="row">
+    <div class="row-fluid">
       <div class="span2" id='concertsbar'>
-        <div class='well'>
+        <div class="well sidebar-nav">
           <%= render :partial => 'common-partials/concertsbar'%>
-        </div>
-      </div>
+        </div><!-- well -->
+      </div><!-- span -->
       <div class="span8">
         <%= render :partial => 'common-partials/flashes' %>
         <%= yield %>
@@ -30,8 +42,8 @@
       <div class="span2">
         <div class='well'>
            <%= render :partial => 'common-partials/filterbar'%>
-        </div>
-      </div>
+        </div><!-- well -->
+      </div><!-- span -->
     </div>
     <footer>
     <%= render :partial => 'common-partials/footer' %>
