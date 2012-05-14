@@ -97,7 +97,6 @@ window.paint = function() {
 
             var x = "<br><i class='icon-remove'></i>"
             x = $(x).attr('id', e.id);
-            console.log(e.id);
 
             $(div).append(marker)
               .append(x)

@@ -76,3 +76,8 @@
     display: inline-block;
 }
 
+#calendar .concert-add {
+    background-color: 'lightgray';
+    display: inline-block;
+}
+

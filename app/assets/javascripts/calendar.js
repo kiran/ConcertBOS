@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#calendar .concert').live('click', function(e, ui) {
+  $('#calendar .concert-add').live('click', function(e, ui) {
     e.preventDefault();
     addPreference($(e.target));
   });
@@ -9,8 +9,9 @@ $(document).ready(function() {
     deletePreference($(e.target));
   });
 
-    function addPreference (item) {
+    function addPreference (i) {
         // get the concert id
+        var item = i.parent();
         var id =item.data('id');
 
         // set the user id to 1
@@ -20,8 +21,8 @@ $(document).ready(function() {
           var list = $('#concerts-list');
           var div = '<div></div>';
           div = $(div);
-          var marker = item.clone();
-          marker.text(item.text() + '\n' + item.data('date'));
+          var marker =  "<a href=concerts/"+item.data('id')+" class='btn btn-inverse btn-mini'></div>";
+          marker = $(marker).text(item.data('name')+" "+ item.data('date'));
           div = div.append(marker);
           div = $(div).append("<i class='icon-remove' id="+e.id+"></i>");
           list.append(div);
