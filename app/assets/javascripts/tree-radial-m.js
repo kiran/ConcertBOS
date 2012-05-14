@@ -127,7 +127,7 @@ $(function() {
         selector: 'svg circle',
         title: function() {
            var d = this.__data__;
-           if (d.concert_id >= 5000) return;
+           if (d.concert_id >= 5000) return d.name;
            return d.when+"<br>$"+d.name;
         }
     });
