@@ -7,7 +7,7 @@
   <% concert = Concert.find(c.concert_id) %>
   <div class='concerts'>
   <%= link_to concert, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
-      <%= concert.artist.name%>, <%= l concert.date, :format=>:day %>
+      <%= concert.artist.name%><br><%= l concert.date, :format=>:day %>
   <% end %>
   <i class='icon-remove' id= <%= c.id %> ></i>
   </div>
