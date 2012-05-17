@@ -30,7 +30,7 @@
                 <%= h(concert.artist.name) %>
             <% end %>
             <%= link_to concert, :class => 'concert-add',
-                    :data => {:name=> h(concert.artist.name), :date =>  (l concert.date, :format=>:day), :id => concert.id, }  do %>
+                    :data => {:name=> h(concert.artist.name), :date =>  (l concert.date, :format=>:day), :id => concert.id}  do %>
                     <icon class='icon-plus'> </i>
             <% end %>
         <% end %>
