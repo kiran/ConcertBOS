@@ -41,11 +41,12 @@
   <tbody>
   <% @venue.concerts.each do |concert| %>
     <tr>
-      <td><%= concert['date'] %></td>
+      <td><%= l concert['date'], :format=>:day %></td>
       <td><%= link_to concert.artist.name, concert.artist %></td>
       <td><%= concert['price'] %></td>
     </tr>
-    
+
   <% end %>
   </tbody>
 </table>
+
