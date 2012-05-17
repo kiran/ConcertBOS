@@ -4,8 +4,8 @@
     <%=  render :partial => 'common-partials/filterbar' %>
 
     <h2>Info:</h2>
-    <p>Click on a concert to indicate interest.
-    <p>Click on <icon class='icon-chevron-right'> </i> to see more about the concert.
+    <p>Click on a concert to read more.
+    <p>Click on <icon class='icon-chevron-right'> </i> to indicate interest.
 <% end %>
 
 <div id='calendar'>
@@ -25,13 +25,13 @@
         <%= day.day %>
         <% concerts.each do |concert| %>
             <p>
-            <%= link_to '', :class => "concert "+color(concert.price),
+            <%= link_to concert, :class => "concert "+color(concert.price)+' '+age(concert),
                     :data => {:date =>  (l concert.date, :format=>:day), :id => concert.id, } do %>
                 <%= h(concert.artist.name) %>
             <% end %>
-            &nbsp;
-            <%= link_to concert do %>
-                    <icon class='icon-chevron-right'> </i>
+            <%= link_to concert, :class => 'concert-add',
+                    :data => {:name=> h(concert.artist.name), :date =>  (l concert.date, :format=>:day), :id => concert.id, }  do %>
+                    <icon class='icon-plus'> </i>
             <% end %>
         <% end %>
       <% end %>

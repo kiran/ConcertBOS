@@ -7,6 +7,7 @@
     <th>Date</th>
     <th>Artist</th>
     <th>Venue</th>
+    <th>Price</th>
     <th>More Info</th>
 
   </tr>
@@ -20,6 +21,7 @@
       <td><%= l concert.date, :format=>:day%></td>
       <td><%= link_to concert.artist.name, concert.artist %></td>
       <td><%= link_to concert.venue.name, concert.venue %></td>
+      <td><%= number_to_currency(concert.price, :unit => "$") %></td>
       <td>
         <%= link_to concert, :class => "btn btn-inverse btn-mini", :style => 'color: #FFFFFF' do %>
             <i class="icon-step-forward icon-white"></i>
@@ -29,4 +31,10 @@
   <% end %>
   </tbody>
 </table>
+
+<% content_for :filterbar do %>
+    <h2>Info:</h2>
+    <p>Click on a concert to indicate interest.
+    <p>Click on <icon class='icon-step-forward'> </i> to see more about the concert.
+<% end %>
 

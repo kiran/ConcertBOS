@@ -24,5 +24,12 @@ module ApplicationHelper
         end
     end
 
+    def age (concert)
+        agerest = ''
+        agerest = 'over18' if concert.over18
+        agerest = 'over21' if concert.over21
+        return agerest
+    end
+
 end
 
