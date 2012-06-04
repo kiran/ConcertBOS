@@ -1,6 +1,8 @@
 == ConcertBOS
 
-ConcertBOS is a concert discovery service for the Boston metropolitan area.  It's backed by last.fm's artist information, and is a Ruby on Rails + Backbone.js app.
+ConcertBOS is a concert discovery service for the Boston metropolitan area.  It's backed by last.fm's artist information, and is a Ruby on Rails app.
+
+It was made for a 6.813 User Interfaces class.  Currently, it has a functional front-end, but a mocked-up backend.
 
 == Contact
 * Kiranmayi Bhattaram: kiranb@mit.edu
