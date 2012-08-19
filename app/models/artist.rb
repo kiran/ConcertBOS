@@ -1,5 +1,7 @@
 class Artist < ActiveRecord::Base
   attr_accessible :name
-  has_many :concerts
+
+  has_and_belongs_to_many :users
+  has_and_belongs_to_many :concerts
 end
 
