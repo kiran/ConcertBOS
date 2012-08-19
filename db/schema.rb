@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,12 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120414173304) do
+ActiveRecord::Schema.define(:version => 20120819025411) do
 
   create_table "artists", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "artist_name"
+    t.integer  "user_id"
+    t.integer  "concert_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "concerts", :force => true do |t|
@@ -29,9 +32,6 @@ ActiveRecord::Schema.define(:version => 20120414173304) do
     t.decimal  "price",      :precision => 8, :scale => 2
   end
 
-  add_index "concerts", ["artist_id"], :name => "index_concerts_on_artist_id"
-  add_index "concerts", ["venue_id"], :name => "index_concerts_on_venue_id"
-
   create_table "concerts_users", :force => true do |t|
     t.integer  "concert_id"
     t.integer  "user_id"
@@ -40,13 +40,14 @@ ActiveRecord::Schema.define(:version => 20120414173304) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username"
+    t.string   "user_name"
+    t.integer  "artist_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "venues", :force => true do |t|
-    t.string   "name"
+    t.string   "venue_name"
     t.text     "address"
     t.integer  "capacity"
     t.string   "phone"

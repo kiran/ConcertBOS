@@ -7,7 +7,5 @@ class CreateConcerts < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :concerts, :artist_id
-    add_index :concerts, :venue_id
   end
 end
