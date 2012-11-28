@@ -6,6 +6,6 @@ This was made for a User Interfaces class (6.813/6.831) at MIT.  It currently ha
 
 == Contact
 * Kiranmayi Bhattaram: kiranb@mit.edu
-* Pia Pal: paramap@mit.edu
+* Pia Pal: parama@mit.edu
 * Evan Thomas: evanryan@mit.edu
 
